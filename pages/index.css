@@ -1,0 +1,59 @@
+/* Import normalize.css first */
+@import url("../vendor/normalize.css");
+/* Import font styles */
+@import url("../vendor/fonts.css");
+
+/* Import other block-specific CSS files */
+@import url("../blocks/page/page.css");
+@import url("../blocks/profile/profile.css");
+
+@import url("../blocks/content.css");
+@import url("../blocks/footer.css");
+@import url("../blocks/cards/cards.css");
+@import url("../blocks/card/card.css");
+
+/*@import url("../blocks/card.css");*/
+/*@import url("../pages/page__content.css");*/
+
+.page {
+  background-color: black;
+  color: white;
+}
+.page__section {
+  max-width: 880px;
+  width: 100%;
+  position: relative;
+  margin-top: 45px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 1100px) {
+  .page__section {
+    margin: 0 20px;
+    max-width: calc(100% - 40px);
+  }
+}
+@media screen and (max-width: 780px) {
+  .page__section {
+    margin: 0 20px;
+    max-width: calc(100% - 40px);
+  }
+}
+@media screen and (max-width: 480px) {
+  .page__section {
+    max-width: calc(100% - 40px);
+  }
+}
+@media screen and (max-width: 320px) {
+  .page__section {
+    max-width: calc(100% - 40px);
+    position: relative;
+  }
+}
