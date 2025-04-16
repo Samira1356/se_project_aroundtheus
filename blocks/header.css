@@ -1,4 +1,30 @@
-.header {
+/*.header {
   margin-top: 45px;
   width: 880px;
+  border-bottom: 1px solid #545454; /* Only apply bottom border
+}/* 
+
+/*.header {
+  height: 74px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #545454; /* Only apply bottom border */
+
+.header {
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding-bottom: 41px;
+  padding-top: 28px;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .header__logo {
+    width: 126px;
+    height: 24px;
+    padding-bottom: 32px;
+    padding-left: 27px;
+  }
+
+  .header {
+    padding-bottom: 0;
+  }
 }

@@ -3,13 +3,19 @@
   align-items: center;
   padding-top: 40px;
 }
+
 .profile__info {
   display: grid;
   grid-template-areas: "title button" "description description";
-  grid-template-columns: minmax(auto 373px) auto;
+  grid-template-columns: minmax(auto, 373px) auto;
   align-items: center;
   grid-gap: 7px 18px;
+  font-family: "Inter", Arial, sans-serif;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
+
 .profile__image {
   width: 120px;
   height: 120px;
@@ -19,30 +25,23 @@
   object-fit: cover;
   margin-right: 24px;
 }
-.profile_name {
-  font-family: "Inter", sans-serif;
-  font-size: 42px;
-  line-height: 1.2;
-  font-weight: 500;
-  grid-area: title;
-  margin: 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
+
 .profile__edit-button {
   background: transparent url(../../images/edit-icon.svg) center no-repeat;
   height: 24px;
   width: 24px;
   grid-area: button;
   align-self: center;
-  margin-left: 18px;
+  /*margin-left: 18px;*/
+  margin-top: 9px;
   border: 1px solid #fff;
 }
 .profile__edit-button:hover {
+  transition: opacity 0.3s ease;
   opacity: 60%;
   cursor: pointer;
 }
+
 .profile__add-button {
   background: transparent url(../../images/add-icon.svg) center no-repeat;
   width: 150px;
@@ -52,56 +51,55 @@
   border-radius: 2px;
 }
 .profile__add-button:hover {
+  transition: opacity 0.3s ease;
   opacity: 60%;
   cursor: pointer;
 }
-.profile__title {
-  font-size: 42px;
-  line-height: 48px;
-  font-weight: 500;
-  grid-area: title;
-  margin: 0;
-}
-.profile_description {
-  font-family: "Inter", sans-serif;
+
+.profile__description {
+  display: grid;
+  grid-area: description;
+  grid-template-columns: minmax(auto, 373px) auto;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 18px;
   line-height: 1.2;
-  grid-area: description;
   margin: 0;
-  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Only show 1 line */
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
+/* ✅ Cleaned and optimized media queries */
+
 @media screen and (max-width: 780px) {
   .profile {
     flex-direction: column;
-    margin: 0 auto;
-    margin: 36px;
+    margin: 36px auto;
   }
+
   .profile__info {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 36px;
+    margin: 36px auto;
   }
+
   .profile__image {
     margin-bottom: 30px;
   }
-  .profile_name {
-    font-size: 32px;
-  }
-  .profile_description {
+
+  .profile__description {
     width: 100%;
     text-align: center;
   }
+
   .profile__add-button {
-    margin: 0;
     width: 100%;
-    margin: 0 auto;
-    margin-bottom: 36px;
+    margin: 0 auto 36px;
   }
 }
 
@@ -112,32 +110,36 @@
     width: 320px;
     margin: 0 auto;
   }
+  .profile__title {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   .profile__info {
     display: flex;
-    flex-direction: wrap;
     justify-content: center;
-    width: 100%;
     align-items: center;
+    width: 100%;
     margin-bottom: 36px;
   }
+
   .profile__image {
     margin-bottom: 30px;
   }
-  .profile__name {
-    font-size: 24px;
-  }
-  .profile_description {
+
+  .profile__description {
     width: 100%;
     text-align: center;
-    margin: 0;
   }
+
   .profile__add-button {
-    margin: 0;
     width: 100%;
-    margin-bottom: 36px;
-    margin: auto;
+    margin: 0 auto 36px;
   }
 }
+
 @media screen and (max-width: 320px) {
   .profile {
     flex-direction: column;
@@ -145,24 +147,23 @@
     width: 100%;
     margin: 0 auto;
   }
+
   .profile__info {
     align-items: center;
     justify-content: center;
-    column-gap: 10px;
     gap: 10px;
   }
+
   .profile__image {
     margin-bottom: 30px;
   }
-  .profile__name {
-    font-size: 24px;
-    line-height: 1.2;
-  }
+
   .profile__edit-button {
     width: 18px;
     height: 18px;
   }
-  .profile_description {
+
+  .profile__description {
     font-size: 14px;
     line-height: 1.2;
   }

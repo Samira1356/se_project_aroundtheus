@@ -1,19 +1,35 @@
-/* Define font-face for Inter Regular */
+/*# recommended to use woff2 for modern browsers and woff for older ones */
+/* Inter Regular (400) */
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./fonts/Inter-Regular.woff2") format("woff2"),
-    url("./fonts/Inter-Regular.woff") format("woff");
+  src: url("./fonts/Inter-Regular.woff2") format("woff2");
+  /*url("./fonts/Inter-Regular.woff") format("woff");*/
 }
 
-/* Define font-face for Inter Medium */
+/* Inter Medium (500) */
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("./fonts/Inter-Medium.woff2") format("woff2"),
-    url("./fonts/Inter-Medium.woff") format("woff");
+  src: url("./fonts/Inter-Medium.woff2") format("woff2");
+  /*url("./fonts/Inter-Medium.woff") format("woff");*/
+}
+
+/* Inter Black (900) */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("./fonts/Inter-Black.woff2") format("woff2");
+  /*url("./fonts/Inter-Black.woff") format("woff");*/
+}
+
+/* Apply Inter to the entire page */
+body {
+  font-family: "Inter", Arial, sans-serif;
 }
