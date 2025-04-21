@@ -35,7 +35,6 @@
 }
 .card__like-button {
   background: transparent url(../../images/like-inactive.svg) center no-repeat;
-  background-size: contain;
   width: 21px;
   height: 18px;
   margin-left: auto;
@@ -47,20 +46,15 @@
   opacity: 0.5;
 }
 @media screen and (max-width: 480px) {
+  .card__title {
+    max-width: 100%;
+  }
+
   .card__image {
     width: 100%;
     height: auto;
   }
-  .card__title {
-    max-width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    font-weight: 900;
-    line-height: 1.2;
-    margin: 0;
-    max-width: 220px;
-  }
+
   .card__description {
     padding: 20px;
   }

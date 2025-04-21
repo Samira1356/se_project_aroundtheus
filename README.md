@@ -17,7 +17,7 @@
 ## 📐 Project Features
 
 - Responsive layout across 320px, 768px, and 1440px breakpoints
-- Mobile-first design with no horizontal scroll
+- Mobile-first and web design with no horizontal scroll
 - Clean Flat BEM file structure
 - Semantic HTML tags: <header>, <main>, <footer>, <section>, etc.
 - 6 interactive photo cards featuring place names

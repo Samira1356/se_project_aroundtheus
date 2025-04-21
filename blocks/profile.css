@@ -1,27 +1,52 @@
 .profile {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* space between info and add button */
   padding-top: 40px;
+  flex-wrap: wrap; /* ensures wrapping on smaller screens */
 }
 
 .profile__info {
   display: grid;
-  grid-template-areas: "title button" "description description";
-  grid-template-columns: minmax(auto, 373px) auto;
+  grid-template-areas:
+    "title button"
+    "description description";
+  /* You can re-enable this if needed for title/button layout width control */
+  /* grid-template-columns: minmax(auto, 373px) auto; */
   align-items: center;
-  grid-gap: 7px 18px;
+  gap: 7px 18px;
   font-family: "Inter", Arial, sans-serif;
-  text-overflow: ellipsis;
-  overflow: hidden;
+}
+
+.profile__title {
+  grid-area: title;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 100%;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile__description {
+  grid-area: description;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #b0b0b0;
+  margin: 0;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .profile__image {
   width: 120px;
   height: 120px;
-  font-weight: 500;
   border-radius: 50%;
-  background-position: center;
   object-fit: cover;
   margin-right: 24px;
 }
@@ -32,139 +57,64 @@
   width: 24px;
   grid-area: button;
   align-self: center;
-  /*margin-left: 18px;*/
   margin-top: 9px;
   border: 1px solid #fff;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 .profile__edit-button:hover {
-  transition: opacity 0.3s ease;
   opacity: 60%;
-  cursor: pointer;
 }
 
 .profile__add-button {
   background: transparent url(../../images/add-icon.svg) center no-repeat;
   width: 150px;
   height: 50px;
-  margin-left: auto;
   border: 2px solid #fff;
   border-radius: 2px;
-}
-.profile__add-button:hover {
   transition: opacity 0.3s ease;
-  opacity: 60%;
   cursor: pointer;
 }
-
-.profile__description {
-  display: grid;
-  grid-area: description;
-  grid-template-columns: minmax(auto, 373px) auto;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Only show 1 line */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.profile__add-button:hover {
+  opacity: 60%;
 }
 
-/* ✅ Cleaned and optimized media queries */
-
+/* ✅ Tablet & smaller: adjust font size and layout */
 @media screen and (max-width: 780px) {
   .profile {
     flex-direction: column;
     margin: 36px auto;
   }
 
-  .profile__info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 36px auto;
-  }
-
-  .profile__image {
-    margin-bottom: 30px;
-  }
-
-  .profile__description {
-    width: 100%;
-    text-align: center;
-  }
-
-  .profile__add-button {
-    width: 100%;
-    margin: 0 auto 36px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .profile {
-    flex-direction: column;
-    justify-content: center;
-    width: 320px;
-    margin: 0 auto;
-  }
   .profile__title {
+    font-size: 28px;
     max-width: 100%;
+    text-align: center;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
-  }
-
-  .profile__info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 36px;
-  }
-
-  .profile__image {
-    margin-bottom: 30px;
+    white-space: nowrap;
   }
 
   .profile__description {
-    width: 100%;
     text-align: center;
+    font-size: 16px;
   }
 
   .profile__add-button {
     width: 100%;
-    margin: 0 auto 36px;
+    margin: 24px 0 0;
   }
 }
 
+/* ✅ Mobile: fine-tune for small screens */
 @media screen and (max-width: 320px) {
-  .profile {
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .profile__info {
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .profile__image {
-    margin-bottom: 30px;
+  .profile__description {
+    font-size: 14px;
+    line-height: 1.2;
   }
 
   .profile__edit-button {
     width: 18px;
     height: 18px;
-  }
-
-  .profile__description {
-    font-size: 14px;
-    line-height: 1.2;
   }
 }
